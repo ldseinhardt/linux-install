@@ -1,0 +1,39 @@
+#!/bin/bash
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y autoremove
+
+#AMD DRIVER
+sudo add-apt-repository -y ppa:ubuntu-x-swat/x-updates
+sudo apt-get -y update
+sudo apt-get -y install fglrx
+
+#MY PROGRAMS
+sudo apt-get -y purge openjdk*
+sudo add-apt-repository -y ppa:videolan/stable-daily
+sudo add-apt-repository -y ppa:webupd8team/java 
+sudo add-apt-repository -y ppa:webupd8team/sublime-text-3 
+sudo add-apt-repository -y ppa:irie/blender
+sudo add-apt-repository -y ppa:danielrichter2007/grub-customizer 
+sudo add-apt-repository -y ppa:tualatrix/ppa 
+sudo add-apt-repository -y ppa:maarten-baert/simplescreenrecorder
+sudo apt-get -y update
+#midia
+sudo apt-get -y install ubuntu-restricted-extras vlc
+#dev program
+sudo apt-get -y install gcc g++ ghc software-properties-common oracle-java8-installer git-core libssl-dev mysql-server php5 php5-mysql npm nodejs
+#dev program tools
+sudo apt-get -y install sublime-text-installer geany filezilla mysql-workbench
+#graphic tools
+sudo apt-get -y install gimp blender kolourpaint4
+#util
+sudo apt-get -y install chromium-browser synaptic wine grub-customizer gparted dconf-tools ubuntu-tweak simplescreenrecorder simplescreenrecorder-lib:i386 curl
+
+sudo sed -i 's/enabled=1/enabled=0/' /etc/default/apport && sudo service apport stop
+
+clear
+
+echo "OK"
+
+exit
